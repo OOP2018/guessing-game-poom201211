@@ -53,7 +53,16 @@ public class NumberGame {
 	public int getUpperBound() {
 		return Integer.MAX_VALUE;  // not very helpful :-)
 	}
-    
+
+	/**
+	 * This method is created so that polymorphism can occur. By creating
+	 * a method in the superclass NumberGame the subclass of PoomGuessingGame
+	 * can override it.
+	 * @return 0
+	 */
+	public int getCount(){
+		return 0;
+	}
     /**
      * toString describes the game or problem.
      * @return description of this game or the problem to be solved.

@@ -1,4 +1,11 @@
 import java.util.Random;
+/**
+ * This is a guessing game with an upperbound of 100 from 0, with the
+ * addition of a counting system for each guess.
+ *
+ * @author Thanapoom Rattanathumawat
+ * @version 2018.01.11
+ */
 
 public class PoomGuessingGame extends NumberGame {
 

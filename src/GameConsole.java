@@ -3,6 +3,7 @@ import java.util.Scanner;
 /** 
  *  Play guessing game on the console.
  */
+
 public class GameConsole {
 
 	/** play the game. */

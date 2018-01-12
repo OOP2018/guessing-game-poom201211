@@ -8,7 +8,13 @@ public class Main {
 		// upper limit for secret number in guessing game
 		int upperBound = 100;
 		NumberGame game = new PoomGuessingGame(upperBound);
+		GameSolver solve = new GameSolver();
 		GameConsole ui = new GameConsole( );
 		int solution = ui.play( game );
+		/**
+		 * The part below is to check if the class GameSolver works.
+		 */
+		int answer = solve.play(game);
+		System.out.println("The answer is " + answer);
 	}
 }

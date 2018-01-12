@@ -17,13 +17,25 @@ public class GameSolver {
      */
     public int play(NumberGame game){
 
+        int max = game.getUpperBound();
+        int min = 1;
         int solution = 0;
 
-        for(int i = 0;i < game.getUpperBound();i++){
-            solution++;
-           if(game.guess(i) == true){
-               break;
-           }
+        while(true){
+            int range = (max - min) + 1;
+            int guessNumber = (int)((Math.random()*range) + min);
+            game.guess(guessNumber);
+            String hint = game.getMessage();
+            if(hint.contains("large")){
+                max = guessNumber;
+            }
+            else if(hint.contains("small")){
+                min = guessNumber;
+            }
+            else if(hint.contains("Correct")){
+                solution = guessNumber;
+                break;
+            }
         }
         return solution;
     }

@@ -16,15 +16,16 @@ public class GameConsole {
 		
 		// This is just an example.
 		while(true){
-			System.out.print("Your answer? ");
+			System.out.println( game.getMessage() );
+			System.out.print("\nYour answer? ");
 			guess = console.nextInt();
 			boolean correct = game.guess(guess);
-			System.out.println( game.getMessage() );
 			System.out.println("Number of guesses: "+game.getCount());
 			if(correct){
 				break;
 			}
 		}
+		System.out.println( game.getMessage() );
 		return guess;
 	}
 	

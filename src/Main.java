@@ -8,8 +8,8 @@ public class Main {
 		// upper limit for secret number in guessing game
 		int upperBound = 100;
 		NumberGame game = new PoomGuessingGame(upperBound);
-		GameSolver solve = new GameSolver();
 		GameConsole ui = new GameConsole( );
+		GameSolver solve = new GameSolver();
 		int solution = ui.play( game );
 		/**
 		 * The part below is to check if the class GameSolver works.

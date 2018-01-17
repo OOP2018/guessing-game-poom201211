@@ -17,26 +17,25 @@ public class GameSolver {
      */
     public int play(NumberGame game){
 
+        boolean correct;
+        int bound;
         int max = game.getUpperBound();
         int min = 1;
-        int solution = 0;
 
-        while(true){
-            int range = (max - min) + 1;
-            int guessNumber = (int)((Math.random()*range) + min);
-            game.guess(guessNumber);
-            String hint = game.getMessage();
-            if(hint.contains("large")){
-                max = guessNumber;
+        do {
+            bound = min + (max - min) / 2;
+
+            correct = game.guess(bound);
+
+            String message = game.getMessage();
+
+            if (message.contains("small")) {
+                min = bound + 1;
+            } else if (message.contains("large")) {
+                max = bound - 1;
             }
-            else if(hint.contains("small")){
-                min = guessNumber;
-            }
-            else if(hint.contains("Correct")){
-                solution = guessNumber;
-                break;
-            }
-        }
-        return solution;
+
+        } while (!correct);
+        return bound;
     }
 }

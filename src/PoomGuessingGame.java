@@ -20,7 +20,7 @@ public class PoomGuessingGame extends NumberGame {
         this.upperBound = upperbound;
         long seed = System.nanoTime();
         Random secretNum = new Random(seed);
-        this.secret = secretNum.nextInt(100) + 1;
+        this.secret = secretNum.nextInt(this.upperBound) + 1;
         setMessage(String.format("I'm thinking of a number between 1 and %d.",upperbound));
     }
 

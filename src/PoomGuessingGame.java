@@ -15,7 +15,10 @@ public class PoomGuessingGame extends NumberGame {
     //Counts the number of guesses
     private int count;
 
-    //This is the constructor for the default game
+    /**
+     * This is the constructor for the default game
+     * @param upperbound entered by user
+     */
     public PoomGuessingGame (int upperbound){
         this.upperBound = upperbound;
         long seed = System.nanoTime();
@@ -66,6 +69,6 @@ public class PoomGuessingGame extends NumberGame {
     }
 
     @Override
-    public String toString(){ return "Guess a secret number between 1 and 100."; }
+    public String toString(){ return String.format("Guess a secret number between 1 and %d.", getUpperBound()); }
 
 }

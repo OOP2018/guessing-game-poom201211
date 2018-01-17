@@ -8,13 +8,14 @@ import java.util.Random;
  */
 
 public class PoomGuessingGame extends NumberGame {
-
+    //Upperbound of the secret number
     private int upperBound;
-
+    //The solution
     private int secret;
-
+    //Counts the number of guesses
     private int count;
 
+    //This is the constructor for the default game
     public PoomGuessingGame (int upperbound){
         this.upperBound = upperbound;
         long seed = System.nanoTime();
@@ -23,6 +24,11 @@ public class PoomGuessingGame extends NumberGame {
         setMessage(String.format("I'm thinking of a number between 1 and %d.",upperbound));
     }
 
+    /**
+     * This method evaluates the players guesses
+     * @param number
+     * @return boolean true or false
+     */
     public boolean guess(int number){
         if (number == secret) {
             setMessage("Correct! The value is "+secret);
@@ -43,14 +49,23 @@ public class PoomGuessingGame extends NumberGame {
         return false;
     }
 
+    /**
+     * Gets the upperboud of the game
+     * @return upperbound of the default game
+     */
     public int getUpperBound(){
         return upperBound;
     }
 
+    /**
+     * Gets the number of guesses and returns them
+     * @return the number of guesses
+     */
     public int getCount(){
         return count;
     }
 
+    @Override
     public String toString(){ return "Guess a secret number between 1 and 100."; }
 
 }

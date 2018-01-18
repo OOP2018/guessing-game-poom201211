@@ -15,6 +15,6 @@ public class Main {
 		 * The part below is to check if the class GameSolver works.
 		 */
 		int answer = solve.play(game);
-		System.out.println("The answer is " + answer);
+		System.out.println("The answer is " + answer + ", total number of tries: " + solve.count());
 	}
 }

@@ -19,7 +19,7 @@ public class PoomGuessingGame extends NumberGame {
      * This is the constructor for the default game
      * @param upperbound entered by user
      */
-    public PoomGuessingGame (int upperbound){
+    public PoomGuessingGame(int upperbound){
         this.upperBound = upperbound;
         long seed = System.nanoTime();
         Random secretNum = new Random(seed);

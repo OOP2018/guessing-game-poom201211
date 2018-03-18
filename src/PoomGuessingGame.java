@@ -14,6 +14,8 @@ public class PoomGuessingGame extends NumberGame {
     private int secret;
     //Counts the number of guesses
     private int count;
+    // Last guess
+    private int lastGuess;
 
     /**
      * This is the constructor for the default game
@@ -33,13 +35,14 @@ public class PoomGuessingGame extends NumberGame {
      * @return boolean true or false
      */
     public boolean guess(int number){
-        if (number == secret) {
+        lastGuess = number;
+        if (lastGuess == secret) {
             setMessage("Correct! The value is "+secret);
             count++;
             return true;
         }
 
-        else if (number < secret) {
+        else if (lastGuess < secret) {
             setMessage("Your answer is too small.");
             count++;
             return false;
@@ -66,6 +69,14 @@ public class PoomGuessingGame extends NumberGame {
      */
     public int getCount(){
         return count;
+    }
+
+    /**
+     * get the last number you've guessed
+     * @return lastNumber
+     */
+    public int getLastGuess(){
+        return lastGuess;
     }
 
     @Override
